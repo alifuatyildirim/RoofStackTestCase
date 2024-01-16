@@ -33,13 +33,16 @@ The application is built on the .NET Core platform, using MongoDB as the databas
 
 ### 💻 Technologies Used
 - .NET Core
-- MongoDB
+- MongoDB (Clustered)
 - Docker
 
 ### 🏗️ Setting Up the Project
 1. Clone the repository
 2. Navigate to the project directory
 3. Build and run the Docker containers: `docker-compose up -d`
+
+**MongoDB Cluster Setup:**
+- Use Docker-compose products for MongoDB settings:
 
 ### 🧪 Running Tests
 1. Ensure the project dependencies are installed: `dotnet restore`
