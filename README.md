@@ -40,8 +40,8 @@ The application is built on the .NET Core platform, using MongoDB as the databas
 
 ### Running Tests
 1. Ensure the project dependencies are installed: `dotnet restore`
-2. Run integration tests: `dotnet test WalletService.Tests.Integration`
-3. Run unit tests: `dotnet test WalletService.Tests.Unit`
+2. Run integration tests: `dotnet test Wallet.Api.Integration.Test`
+3. Run unit tests: `dotnet test Wallet.Api.UnitTest`
 
 ## Usage
 
