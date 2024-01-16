@@ -42,7 +42,7 @@ The application is built on the .NET Core platform, using MongoDB as the databas
 3. Build and run the Docker containers: `docker-compose up -d`
 
 **MongoDB Cluster Setup:**
-- Use Docker-compose products for MongoDB settings:
+- Use docker-compose files for MongoDB settings:
 
 ### 🧪 Running Tests
 1. Ensure the project dependencies are installed: `dotnet restore`
