@@ -28,8 +28,6 @@ This project is a wallet application designed to integrate with a payment system
 ### System Design
 The application is built on the .NET Core platform, using MongoDB as the database. Docker-compose is utilized for easy deployment and scalability.
 
-![System Diagram](system_diagram.png)
-
 ### Technologies Used
 - .NET Core
 - MongoDB
