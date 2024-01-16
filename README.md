@@ -34,8 +34,8 @@ The application is built on the .NET Core platform, using MongoDB as the databas
 - Docker
 
 ### Setting Up the Project
-1. Clone the repository: `git clone https://github.com/your-username/wallet-service.git`
-2. Navigate to the project directory: `cd wallet-service`
+1. Clone the repository
+2. Navigate to the project directory
 3. Build and run the Docker containers: `docker-compose up -d`
 
 ### Running Tests
