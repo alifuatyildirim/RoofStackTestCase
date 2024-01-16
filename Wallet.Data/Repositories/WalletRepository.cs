@@ -3,7 +3,7 @@ using Wallet.Domain.Repositories.Base;
 
 namespace Wallet.Data.Repositories;
 
-public class WalletRepository : IWalletRepository
+public class WalletRepository : IWalletRepository,IWalletRepositoryForTest
 {
     private readonly IGenericRepository<Domain.Entities.Wallet, Guid> genericRepository;
 
@@ -16,7 +16,10 @@ public class WalletRepository : IWalletRepository
     
     public async Task<Guid> CreateAsync(Domain.Entities.Wallet wallet, ITransactionScope? scope)
     {
-        wallet.Id = Guid.NewGuid();
+        if (wallet.Id == default)
+        {
+            wallet.Id = Guid.NewGuid();
+        }
         await this.genericRepository.AddOneAsync(wallet,transactionScope:scope);
         return wallet.Id;
     }
@@ -35,5 +38,10 @@ public class WalletRepository : IWalletRepository
     public async Task<Domain.Entities.Wallet> GetAsync(Guid Id)
     {
         return await this.genericRepository.GetByIdAsync(Id);
+    }
+
+    public async Task<IReadOnlyList<Domain.Entities.Wallet>> GetAllAsync()
+    {
+        return await this.genericRepository.Query().ToListAsync();
     }
 }

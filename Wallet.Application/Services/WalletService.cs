@@ -42,7 +42,7 @@ public class WalletService : IWalletService
 
         return new WalletResponse()
         {
-            Items = this.mapper.Map<IReadOnlyCollection<WalletResponseItem>>(wallets),
+            Items = this.mapper.Map<List<WalletResponseItem>>(wallets),
         };
     }
 

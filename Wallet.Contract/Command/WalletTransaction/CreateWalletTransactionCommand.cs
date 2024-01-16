@@ -4,7 +4,7 @@ using Wallet.Common.Mediatr.Command;
 
 namespace Wallet.Contract.Command.WalletTransaction;
 
-public record CreateWalletTransactionCommand : IApplicationCommand<GuidIdResult>
+public class CreateWalletTransactionCommand : IApplicationCommand<GuidIdResult>
 { 
     [JsonIgnore]
     public Guid WalletId { get; set; }

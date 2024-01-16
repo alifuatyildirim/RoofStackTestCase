@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
+using Wallet.Api.Extensions;
 using Wallet.Common.ExceptionHandling;
 
 namespace Wallet.Api.Middlewares
@@ -110,7 +111,7 @@ namespace Wallet.Api.Middlewares
 
             try
             {
-                var walletException = (WalletException)edi.SourceException;
+                WalletException walletException = edi.MapToWalletException(this.logger); 
 
                 if (context.Response.HasStarted)
                 {

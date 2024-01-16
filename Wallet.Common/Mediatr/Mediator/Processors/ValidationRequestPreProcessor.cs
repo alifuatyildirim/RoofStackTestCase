@@ -1,6 +1,8 @@
-﻿using FluentValidation;
+﻿using System.Net;
+using FluentValidation;
 using MediatR.Pipeline;
-using Microsoft.Extensions.Logging; 
+using Microsoft.Extensions.Logging;
+using Wallet.Common.Mediatr.Exceptions;
 
 namespace Wallet.Common.Mediatr.Mediator.Processors
 {
@@ -28,8 +30,9 @@ namespace Wallet.Common.Mediatr.Mediator.Processors
 
             if (failures.Count > 0)
             {
-                string message = string.Join(", ", failures.Select(x => x.ErrorMessage));
-                throw new Exception(message);
+                var exception = failures.FirstOrDefault();
+                string message = string.Join(", ", failures.Select(x => x.ErrorMessage)); 
+                throw new CqrsValidationException(message);
             }
 
             return Task.CompletedTask;

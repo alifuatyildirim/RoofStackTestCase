@@ -4,7 +4,7 @@ using Wallet.Contract.Response.Abstraction;
 
 namespace Wallet.Contract
 {
-    public record GuidIdResult : IdResult<Guid>
+    public class GuidIdResult : IdResult<Guid>
     {
         [JsonConstructor]
         public GuidIdResult(in Guid id)

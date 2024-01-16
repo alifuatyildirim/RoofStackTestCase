@@ -2,7 +2,7 @@ using Wallet.Common.Constants;
 
 namespace Wallet.Contract.Abstraction
 {
-    public abstract record PagedQuery
+    public abstract class PagedQuery
     {
         private int limit = PagingConstants.PageLimit;
         private int offset;

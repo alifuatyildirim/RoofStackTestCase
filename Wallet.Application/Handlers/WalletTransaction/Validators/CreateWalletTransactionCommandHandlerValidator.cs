@@ -9,6 +9,10 @@ public class CreateWalletTransactionCommandHandlerValidator: AbstractValidator<C
 {
     public CreateWalletTransactionCommandHandlerValidator()
     {
+        this.RuleFor(x => x.Amount)
+            .GreaterThan(0)
+            .WithMessage(ErrorCode.AmountGreatherThanZero.GetDescription());
+        
         this.RuleFor(x => x.WalletId)
             .NotNull()
             .NotEmpty().WithMessage(ErrorCode.WalletIdCannotBeEmpty.GetDescription());
@@ -16,9 +20,5 @@ public class CreateWalletTransactionCommandHandlerValidator: AbstractValidator<C
         this.RuleFor(x => x.CreatedBy)
             .NotNull()
             .NotEmpty().WithMessage(ErrorCode.CreatedByCannotBeEmpty.GetDescription());
-        
-        this.RuleFor(x => x.Amount).GreaterThan(0)
-            .NotNull()
-            .NotEmpty().WithMessage(ErrorCode.AmountGreatherThanZero.GetDescription());
     }
 }

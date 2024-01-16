@@ -32,26 +32,6 @@ public static class ConfigurationServiceCollectionExtensions
     {
         return services.Configure<TOptions>(services.GetDefaultConfiguration().GetSection(typeof(TOptions).Name));
     }
-
-    public static IServiceCollection ConfigureAndGetWithOptionName<TOptions>(this IServiceCollection services,
-        out TOptions options)
-        where TOptions : class
-    {
-        IConfigurationSection configurationSection =
-            services.GetDefaultConfiguration().GetSection(typeof(TOptions).Name);
-        options = configurationSection.Get<TOptions>();
-
-        return services.Configure<TOptions>(configurationSection);
-    }
-
-    public static TOptions GetOptionWithName<TOptions>(this IServiceCollection services)
-        where TOptions : class
-    {
-        IConfigurationSection configurationSection =
-            services.GetDefaultConfiguration().GetSection(typeof(TOptions).Name);
-        return configurationSection.Get<TOptions>();
-    }
-
     public static IServiceCollection AddNewtonsoftJsonCoreSettings(this IServiceCollection services)
     {
         var settings = new JsonSerializerSettings();

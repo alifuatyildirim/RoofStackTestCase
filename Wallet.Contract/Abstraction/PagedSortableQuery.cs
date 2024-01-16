@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace Wallet.Contract.Abstraction
 {
-    public abstract record PagedSortableQuery : PagedQuery, ISortableQuery
+    public abstract class PagedSortableQuery : PagedQuery, ISortableQuery
     {
         public string? SortField { get; set; }
 

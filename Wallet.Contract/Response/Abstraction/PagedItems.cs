@@ -1,6 +1,6 @@
 namespace Wallet.Contract.Response.Abstraction
 {
-    public abstract record PagedItems<TModel> 
+    public abstract class PagedItems<TModel> 
         where TModel : class
     {
         public int TotalCount { get; set; }

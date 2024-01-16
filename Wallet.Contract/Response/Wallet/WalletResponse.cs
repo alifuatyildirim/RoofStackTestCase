@@ -1,6 +1,6 @@
 namespace Wallet.Contract.Response.Wallet;
 
-public record WalletResponse
+public class WalletResponse
 {
-    public IReadOnlyCollection<WalletResponseItem> Items { get; set; }
+    public List<WalletResponseItem> Items { get; set; }
 }

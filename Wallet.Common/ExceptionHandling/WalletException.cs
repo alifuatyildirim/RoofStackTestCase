@@ -44,11 +44,7 @@ namespace Wallet.Common.ExceptionHandling
 
         public EventId? EventId { get; }
 
-        /// <summary>
-        /// This is written to http response in ExceptionHandlerMiddleware.
-        /// DO NOT set this in ctor since it can accidentally leak sensitive data.
-        /// Use the protected set.
-        /// </summary>
+        public string? LogMessage { get; set; }
         public object? ErrorData { get; protected set; }
     }
 }

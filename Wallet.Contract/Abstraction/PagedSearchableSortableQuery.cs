@@ -1,6 +1,6 @@
 namespace Wallet.Contract.Abstraction
 {
-    public abstract record PagedSearchableSortableQuery : PagedSortableQuery, ISearchableQuery
+    public abstract class PagedSearchableSortableQuery : PagedSortableQuery, ISearchableQuery
     {
         public string? SearchText { get; set; }
     }

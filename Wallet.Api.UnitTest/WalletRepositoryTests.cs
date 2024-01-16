@@ -20,7 +20,7 @@ public class WalletRepositoryTests
             Id = Guid.NewGuid(),
             UserId = Guid.NewGuid(),
             Limit = 100,
-            CurrencyCode = CurrencyCode.Tl 
+            CurrencyCode = CurrencyCode.TRY 
         };
 
         genericRepositoryMock.Setup(repo => repo.AddOneAsync(wallet, It.IsAny<ITransactionScope>()))
@@ -47,7 +47,7 @@ public class WalletRepositoryTests
             Id = walletId,
             UserId = userId,
             Limit = 100,
-            CurrencyCode = CurrencyCode.Tl 
+            CurrencyCode = CurrencyCode.TRY 
         };
 
         genericRepositoryMock.Setup(repo => repo.UpdateAsync(wallet, It.IsAny<ITransactionScope>()))
@@ -76,7 +76,7 @@ public class WalletRepositoryTests
                 Id = walletId,
                 UserId = userId,
                 Limit = 100,
-                CurrencyCode = CurrencyCode.Tl 
+                CurrencyCode = CurrencyCode.TRY 
             },
             new Wallet.Domain.Entities.Wallet
             {

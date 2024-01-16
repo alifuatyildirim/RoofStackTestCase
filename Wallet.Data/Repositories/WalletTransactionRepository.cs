@@ -17,7 +17,11 @@ public class WalletTransactionRepository : IWalletTransactionRepository
     
     public async Task<Guid> CreateAsync(WalletTransaction walletTransaction, ITransactionScope? scope)
     {
-        walletTransaction.Id = Guid.NewGuid();
+        if (walletTransaction.Id == default)
+        {
+            walletTransaction.Id = Guid.NewGuid();
+        }
+
         await this.genericRepository.AddOneAsync(walletTransaction,transactionScope:scope);
         return walletTransaction.Id;
     }
