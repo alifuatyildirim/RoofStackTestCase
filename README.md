@@ -16,6 +16,7 @@
 5. [Enums](#enums)
    - [CurrencyCode](#currencycode)
    - [TransactionType](#transactiontype)
+6. [More Information](#more-information)
 
 ## 🌟 Summary
 This project is a wallet application designed to integrate with a payment system. Users can create wallets supporting different currencies, perform deposit/withdraw operations, query their current balance, and receive transaction reports. The system ensures transaction integrity, rolling back any operation in case of encountered problems during deposit/withdraw operations.
@@ -43,6 +44,9 @@ The application is built on the .NET Core platform, using MongoDB as the databas
 
 **MongoDB Cluster Setup:**
 - Use docker-compose files for MongoDB settings:
+
+More information for mongo db docker replica set 
+https://www.mongodb.com/compatibility/deploying-a-mongodb-cluster-with-docker
 
 ### 🧪 Running Tests
 1. Ensure the project dependencies are installed: `dotnet restore`
@@ -110,3 +114,6 @@ namespace Wallet.Common.Enums
 ```
 
 These enums can be used within your application to represent different currency codes and transaction types. Make sure to update your code references accordingly. 
+
+📚 More Information Deploying a MongoDB Cluster with Docker
+https://www.mongodb.com/compatibility/deploying-a-mongodb-cluster-with-docker
